@@ -6,20 +6,6 @@ A simple endpoint, where users can send their account id and get a response from
 
 Send a post request with a Hedera Account ID to `https://getyour-platform-signin-api.herokuapp.com`.
 
-´´´js
-const https = require('https')
-
-module.exports._getAccountInformationFromHederaMainnetRestApi = function (accountId) {
-  return new Promise((resolve, reject) => {
-    https.get(`https://mainnet-public.mirrornode.hedera.com/api/v1/accounts?account.id=${accountId}`, (res) => {
-      let data = ''
-      res.on('data', buffer => data += buffer)
-      res.on('end', () => resolve(data))
-    }).on('error', (error) => reject(error))
-  })
-}
-´´´
-
 ## Sign in response
 
 Get following response back.
